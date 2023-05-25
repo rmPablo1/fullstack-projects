@@ -14,7 +14,7 @@ function PostShow({post}) {
 
   let isOwner = userId === post.userId._id
   const handleDelete = () => {
-    fetch(`https://blogapp-qvne.onrender.com//post/${post._id}`,{
+    fetch(`https://blogapp-qvne.onrender.com/post/${post._id}`,{
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + token
