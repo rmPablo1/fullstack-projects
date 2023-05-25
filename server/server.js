@@ -32,7 +32,6 @@ const fileFilter = (req, file, cb) => {
       file.mimetype === "image/png" ||
       file.mimetype === "image/jpeg"
       ){
-        console.log("good image")
         cb(null, true)
       } else {
         cb(null, false)
@@ -47,7 +46,6 @@ app.use(postRoutes)
 app.use(authRoutes)
 app.use((err, req, res, next) => {
   const status = err.statusCode || 500
-  console.log("in error middleware")
   res.status(status).json({message: "There was an error in the server", status: status})
 })
 

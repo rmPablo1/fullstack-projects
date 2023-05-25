@@ -15,7 +15,6 @@ function PostAdd() {
   let titleError = ""
   let contentError = ""
 
-  console.log(userId)
 
   if(valueInput.length > 0 && valueInput.length < 15){
     titleError = "We need MORE than 15 characters!"
@@ -29,7 +28,6 @@ function PostAdd() {
     contentError = "We need LESS than 15000 characters"
   }
 
-  console.log(valueContent)
 
   const handleChangeTitle = (event) => {
       setValueInput(event.target.value)
@@ -40,16 +38,15 @@ function PostAdd() {
   }
 
   let method = "POST"
-  let url = "http://localhost:8080/add-post"
+  let url = "https://blogapp-qvne.onrender.com/add-post"
   if (isEditing){
     method = "PATCH"
-    url = "http://localhost:8080/edit-post/" + postToEdit._id
+    url = "https://blogapp-qvne.onrender.com/edit-post/" + postToEdit._id
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
       const formData = new FormData(event.target)
-      console.log(formData.get("content"))
       if (!isEditing){
         formData.append("userId", userId)
       }
@@ -62,7 +59,6 @@ function PostAdd() {
       }).then(res => res.json())
       .then(data => {
         if (!isEditing){
-          console.log(data.createdAt)
           setPosts([data.post,...posts])
         } else if(isEditing) {
           setIsEditing(false)

@@ -13,16 +13,14 @@ import PostDetail from "./components/PostDetail"
 function App() {
   const {posts, setPosts} = useContext(PostContext)
   const {token} = useContext(UserContext)
-  console.log("token", token)
+
   useEffect(() => {
-      fetch("http://localhost:8080/")
+      fetch("https://blogapp-qvne.onrender.com/")
         .then(res => res.json())
         .then(data => {
-          console.log(data)
           const postsData = data.posts
           setPosts(postsData)
         })
-        console.log(posts)
   },[])
 
   return (

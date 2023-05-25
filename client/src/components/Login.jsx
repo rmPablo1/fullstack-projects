@@ -3,11 +3,10 @@ import { useContext } from "react"
 import {UserContext} from "../context/userContext"
 function Login() {
   const {isAuth,setToken, token, setUserId, setIsAuth, setUsername} = useContext(UserContext)
- console.log(token)
   const handleSubmit = (event) => {
     event.preventDefault()
     const formData = new FormData(event.target)
-    fetch("http://localhost:8080/login", {
+    fetch("https://blogapp-qvne.onrender.com/login", {
       method: "POST",
       body: formData
     }).then(res => res.json())
@@ -21,7 +20,6 @@ function Login() {
     })
   }
 
-  console.log(isAuth)
   return (
     <div className="container">
       <form className="loginForm" onSubmit={handleSubmit}>

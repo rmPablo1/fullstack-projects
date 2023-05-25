@@ -3,13 +3,10 @@ import { useContext } from "react"
 import { PostContext } from "../context/postContext"
 function PostDetail() {
   const {posts} = useContext(PostContext)
-  console.log("all posts", posts)
   const postParam = useParams()
-  console.log("param",postParam)
   const postsBefore = [...posts]
   const postUpdated = postsBefore.find(post => post._id === postParam.postId)
-  console.log("postUpdated", postUpdated)
-  const imageUrl = `http://localhost:8080/${postUpdated.imageUrl}`
+  const imageUrl = `https://blogapp-qvne.onrender.com/${postUpdated.imageUrl}`
   return (
     <div className="container">
       <div className="blog-complete-description">

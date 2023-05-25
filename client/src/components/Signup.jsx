@@ -25,7 +25,7 @@ function Signup() {
     }
 
     if(!error){
-      fetch("http://localhost:8080/signup",{
+      fetch("https://blogapp-qvne.onrender.com//signup",{
         method: "POST",
         body: formData
       })
@@ -35,7 +35,6 @@ function Signup() {
           setIsSignedUp(true)
         }
       }).catch(err =>{
-        console.log(err)
         setError(true)
       })
     }
