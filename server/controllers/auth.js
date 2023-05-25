@@ -72,7 +72,7 @@ exports.postSignup = async (req, res, next) => {
     res.status(201).json({message: "User created successfully", user: savedUser})
     transporter.sendMail({
       to: email,
-      from: 'blogappproject@gmail.com',
+      from: 'pablorubiiimonzo@gmail.com',
       subject: 'Password reset',
       html: `
         <p>Thanks for signing up in my website!</p>
