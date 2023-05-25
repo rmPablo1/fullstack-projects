@@ -1,0 +1,182 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+header{
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom:150px;
+}
+
+nav ul{
+  justify-self: end;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+nav ul li{
+  padding: 10px;
+  font-size: 20px
+}
+
+nav ul li:last-child{
+  display:none;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: black;
+}
+.container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+form{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.blog-miniature{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 15px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.blog-miniature-description{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: start;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.blog-miniature-description p:first-child{
+  font-weight: 600;
+}
+
+p{
+  text-overflow: ellipsis;
+}
+.container div{
+  width: 70%;
+}
+.blog-image-thumbnail{
+  width:250px;
+  height: 200px;
+}
+
+.blog-complete-description{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: start;
+  max-width: 100%;
+}
+
+.blog-complete-description p:last-child{
+  margin-top: 100px;
+  font-size: 20px;
+}
+
+.blog-complete-description img{
+  width:100%;
+  height:350px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+
+}
+
+.signupForm, .loginForm {
+  width: 30%;
+}
+
+.signupForm input, .loginForm input{
+  height: 30px;
+  border-radius: 8px;
+  padding-left: 15px;
+  font-size: 25px;
+}
+
+form button{
+ background-color: black;
+ font-size: 20px;
+ color: white;
+ padding: 10px;
+ width: 30%;
+ margin: 0 auto;
+}
+.modal{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left:0;
+  bottom:0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+
+.modal li{
+  list-style-type: none;
+  font-size: 30px;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+
+@media (max-width: 750px){
+  header{
+    margin-bottom: 0;
+  }
+  .blog-miniature{
+    flex-direction: column;
+  }
+
+  .blog-miniature-description{
+    min-width: 100%;
+    font-size: 15px;
+  }
+  .blog-image-thumbnail{
+    margin: 0 auto;
+  }
+
+  form,
+  .loginForm,
+  .signupForm{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 150px;
+  }
+
+}
+
+@media (max-width: 705px){
+  nav ul li{
+    display:none;
+  }
+
+  nav ul li:last-child,
+  .brand{
+    display:block;
+  }
+}
