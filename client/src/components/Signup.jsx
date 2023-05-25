@@ -25,7 +25,7 @@ function Signup() {
     }
 
     if(!error){
-      fetch("https://blogapp-qvne.onrender.com//signup",{
+      fetch("https://blogapp-qvne.onrender.com/signup",{
         method: "POST",
         body: formData
       })
