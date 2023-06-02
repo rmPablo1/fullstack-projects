@@ -69,7 +69,7 @@ exports.postSignup = async (req, res, next) => {
     const newUser = new User({email: email, password: hashedPassword, username: username})
     const savedUser = await newUser.save()
     console.log("user created successfully")
-    res.status(201).json({message: "User created successfully", user: savedUser})
+    res.status(201).json({message: "User created successfully", user: savedUser, status: 201})
     transporter.sendMail({
       to: email,
       from: 'pablorubiiimonzo@gmail.com',
