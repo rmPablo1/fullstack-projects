@@ -73,7 +73,7 @@ exports.postSignup = async (req, res, next) => {
     transporter.sendMail({
       to: email,
       from: 'pablorubiiimonzo@gmail.com',
-      subject: 'Password reset',
+      subject: 'Welcome to my BlogApp',
       html: `
         <p>Thanks for signing up in my website!</p>
         <p>If you want to share some thoughts please don't doubt contacting me through my <a href="https://www.linkedin.com/in/pablo-rubio-monzo/">LinkedIn</a> or my personal email: pablorubiiimonzo@gmail.com</p>
