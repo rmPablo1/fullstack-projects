@@ -36,7 +36,6 @@ exports.postLogin = async (req, res, next) => {
       email: email,
       userId: user._id
     }, "ajfajfajfpafkoakapokkoakok", {expiresIn: "1h"})
-    console.log(token)
 
     res.status(200).cookie("token", token).json({message:"User signed in correctly", status: 200, user:user, token: token })
   } catch (err){
@@ -69,6 +68,7 @@ exports.postSignup = async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(password, 12)
     const newUser = new User({email: email, password: hashedPassword, username: username})
     const savedUser = await newUser.save()
+    console.log("user created successfully")
     res.status(201).json({message: "User created successfully", user: savedUser})
     transporter.sendMail({
       to: email,

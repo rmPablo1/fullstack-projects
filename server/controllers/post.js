@@ -7,7 +7,6 @@ exports.getPosts = async (req, res, next) => {
 
   try {
     const posts = await Post.find().populate("userId").sort({createdAt: -1})
-    console.log("posts", posts)
     res.status(200).json({message: "Posts found", posts: posts})
   } catch(err){
     console.log(error)

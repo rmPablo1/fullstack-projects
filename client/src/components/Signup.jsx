@@ -31,6 +31,8 @@ function Signup() {
       })
       .then(res => res.json())
       .then(data => {
+
+        console.log("status",data.status)
         if (data.status === 200 || data.status === 201){
           setIsSignedUp(true)
         }
